@@ -1,0 +1,8 @@
+{
+  "breadcrumb": [
+    { "label": "Home", "href": "/" },
+    { "label": "Entertainment Memorabilia", "href": "/entertainment-memorabilia" },
+    { "label": "Lamps, Lighting", "href": "/entertainment-memorabilia/lamps-lighting" },
+    { "label": "Lamps", "href": "/entertainment-memorabilia/lamps-lighting/lamps" }
+  ]
+}
