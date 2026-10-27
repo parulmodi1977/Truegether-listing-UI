@@ -16,7 +16,12 @@ import QuickFactRow from "@/components/CTASection/QuickFactRow";
 import VariationSelector from "@/components/Variations/VariationSelector";
 import { product } from "@/data/listing";
 
-function ListingDetailsPage() {
+interface ListingDetailsPageProps {
+  onBuyNow?: () => void;
+  onAddToCart?: () => void;
+}
+
+function ListingDetailsPage({ onBuyNow, onAddToCart }: ListingDetailsPageProps) {
   const [listingOpen, setListingOpen] = useState(true);
   const [descriptionOpen, setDescriptionOpen] = useState(true);
   const [specsOpen, setSpecsOpen] = useState(true);
@@ -92,6 +97,14 @@ function ListingDetailsPage() {
           >
             <ShoppingCart size={16} />
             <span>ADD TO CART</span>
+          </button>
+          {/* Buy Now — mobile */}
+          <button
+            type="button"
+            onClick={onBuyNow}
+            className="w-full h-12 border border-[#04352A] hover:bg-emerald-50/50 active:scale-[0.99] rounded-lg text-[#04352A] font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer bg-white"
+          >
+            <span>BUY NOW</span>
           </button>
 
           {/* Secondary CTAs */}
@@ -355,14 +368,14 @@ function ListingDetailsPage() {
         </div>
 
         {/* Sticky Buy Now floating bottom bar */}
-        <MobileStickyBuyNow />
+        <MobileStickyBuyNow onBuyNow={onBuyNow} />
         <MobileBottomNav />
 
         {/* Add to Cart Bottom Sheet */}
         <MobileAddToCartSheet
           isOpen={cartSheetOpen}
           onClose={() => setCartSheetOpen(false)}
-          onViewCart={() => setCartSheetOpen(false)}
+          onViewCart={() => { setCartSheetOpen(false); onAddToCart?.(); }}
         />
       </div>
 
@@ -381,7 +394,7 @@ function ListingDetailsPage() {
             {/* Right Column: action panel — self-start so its content height sets the grid row height */}
             <div className="border border-gray-250 rounded-xl p-3 bg-white shadow-sm flex flex-col gap-2 self-start">
               <ProductInfo />
-              <CTASection />
+              <CTASection onBuyNow={onBuyNow} onAddToCart={onAddToCart} />
             </div>
           </div>
 
