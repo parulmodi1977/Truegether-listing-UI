@@ -200,9 +200,9 @@ function ReviewPurchasePage({ onBack, onOrderPlaced }: ReviewPurchasePageProps) 
                 </div>
                 <div className="flex flex-col gap-0.5">
                   <span className={labelCls}>Seller</span>
-                  <span className="text-xs font-semibold text-[#04352A] underline cursor-pointer">
+                  <a href={`/seller/${product.seller.username}`} className="text-xs font-semibold text-[#04352A] underline">
                     {product.seller.username}
-                  </span>
+                  </a>
                 </div>
               </div>
 

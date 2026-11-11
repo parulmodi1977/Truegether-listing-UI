@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Share2, Heart } from "lucide-react";
+import { Share2 } from "lucide-react";
 import { product } from "@/data/listing";
 import VariationSelector from "@/components/Variations/VariationSelector";
 
@@ -31,13 +31,6 @@ function ProductInfo() {
           >
             <Share2 size={13} />
             <span>Share</span>
-          </button>
-          <button
-            type="button"
-            className="flex items-center gap-1 transition-colors hover:text-gray-700 cursor-pointer"
-          >
-            <Heart size={13} />
-            <span>Save</span>
           </button>
         </div>
       </div>

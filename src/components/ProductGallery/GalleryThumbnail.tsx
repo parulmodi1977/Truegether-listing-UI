@@ -13,7 +13,7 @@ function GalleryThumbnail({ image, isActive, onSelect }: GalleryThumbnailProps) 
       onClick={onSelect}
       aria-label={image.alt}
       aria-current={isActive}
-      className={`h-14 w-14 shrink-0 overflow-hidden rounded-lg border-2 transition-colors sm:h-16 sm:w-16 ${
+      className={`h-10 w-10 shrink-0 overflow-hidden rounded-lg border-2 transition-colors ${
         isActive ? "border-[#04352A]" : "border-gray-200 hover:border-gray-300"
       }`}
     >

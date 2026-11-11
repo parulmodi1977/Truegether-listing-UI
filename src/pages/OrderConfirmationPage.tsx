@@ -135,7 +135,7 @@ function OrderConfirmationPage() {
               <p className="text-sm font-semibold text-gray-900 leading-snug line-clamp-2">{product.title}</p>
               <p className="text-xs text-gray-400 mt-1">
                 Sold by{" "}
-                <span className="text-[#04352A] font-semibold cursor-pointer hover:underline">{product.seller.username}</span>
+                <a href={`/seller/${product.seller.username}`} className="text-[#04352A] font-semibold hover:underline">{product.seller.username}</a>
               </p>
               <div className="flex items-baseline gap-2 mt-1.5">
                 <span className="text-lg font-bold text-gray-900">${product.price.toFixed(2)}</span>

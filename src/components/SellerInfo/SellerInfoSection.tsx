@@ -26,7 +26,7 @@ function SellerInfoSection() {
 
           <div className="flex flex-col gap-1.5 min-w-0">
             <div className="flex items-center gap-1.5">
-              <span className="text-lg font-bold text-gray-900 truncate">{seller.username}</span>
+              <a href={`/seller/${seller.username}`} className="text-lg font-bold text-gray-900 truncate hover:underline">{seller.username}</a>
               {seller.verified && (
                 <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#1DA1F2] text-white">
                   <Check size={10} strokeWidth={4} />

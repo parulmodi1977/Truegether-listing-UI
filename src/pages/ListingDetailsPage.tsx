@@ -291,7 +291,7 @@ function ListingDetailsPage({ onBuyNow, onAddToCart }: ListingDetailsPageProps) 
 
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-base font-bold text-gray-900">{seller.username}</span>
+                    <a href={`/seller/${seller.username}`} className="text-base font-bold text-gray-900 hover:underline">{seller.username}</a>
                     {seller.verified && (
                       <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#1DA1F2] text-white">
                         <Check size={8} strokeWidth={4} />
@@ -385,7 +385,7 @@ function ListingDetailsPage({ onBuyNow, onAddToCart }: ListingDetailsPageProps) 
         <TrustBar />
 
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-[58%_1fr]">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-[55%_1fr] lg:grid-cols-[516px_1fr]">
             {/* Left Column: Gallery only */}
             <div className="self-start">
               <ProductGallery />
